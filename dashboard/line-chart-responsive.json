@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "linechart.csv"
+    },
+    "width": "container",
+   
+    "mark": {
+      "type": "line",
+      "interpolate": "monotone"
+    },
+    "encoding": {
+      "x": {
+        "field": "date",
+        "timeUnit": "month"
+      },
+      "y": {
+        "field": "total",
+        "aggregate": "sum"
+      },
+      "color": {
+   
+        "type": "nominal",
+        "field": "country",  
+        "scale": {
+          "domain": [
+            "China",
+            "India",
+            "United States",
+            "Brazil"
+          
+          ],
+          "range": [
+            "#e7ba52",
+            "#c7c7c7",
+            "#aec7e8",
+            "#1f77b4"
+           
+          ]
+        },
+        "title": "Country" 
+      }
+    },
+    "config": {}
+  }
